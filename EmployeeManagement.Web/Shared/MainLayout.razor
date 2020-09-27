@@ -1,12 +1,87 @@
 ﻿@inherits LayoutComponentBase
-
-<div class="sidebar">
-    <NavMenu />
-</div>
-
-<div class="main">
-  
-    <div class="content px-4 container">
-        @Body
+@*<div class="sidebar">
+        <NavMenu />
     </div>
-</div>
+
+    <div class="main">
+
+        <div class="content px-4 container">
+            @Body
+        </div>
+    </div>
+*@
+
+
+<MatBlazor.MatAppBarContainer>
+    <MatBlazor.MatAppBar Fixed="true">
+        <MatBlazor.MatAppBarRow>
+            <MatBlazor.MatAppBarSection>
+                <MatBlazor.MatIconButton Icon="menu" OnClick="@((b) => ButtonClicked())"></MatBlazor.MatIconButton>
+                    <MatBlazor.MatAppBarTitle>HRMS</MatBlazor.MatAppBarTitle>
+            </MatBlazor.MatAppBarSection>
+            <MatBlazor.MatAppBarSection Align="@MatBlazor.MatAppBarSectionAlign.End">
+                <NavLink class="text-white nav-link" href="" Match="NavLinkMatch.All">
+                    Home
+                </NavLink>
+                <NavLink class="text-white nav-link" href="" Match="NavLinkMatch.All">
+                    Sign In
+                </NavLink>
+                <NavLink class="text-white nav-link" href="" Match="NavLinkMatch.All">
+                    About
+                </NavLink>
+            </MatBlazor.MatAppBarSection>
+        </MatBlazor.MatAppBarRow>
+    </MatBlazor.MatAppBar>
+    @*Navigation Drawer*@
+    <MatBlazor.MatAppBarContent>
+        <MatBlazor.MatAppBarContainer>
+            <MatBlazor.MatDrawerContainer>
+                <MatBlazor.MatDrawer @bind-Opened="@Opened" Mode="MatBlazor.MatDrawerMode.Modal">
+                    @*List*@
+                    <MatBlazor.MatListGroup>
+                        <MatBlazor.MatListGroupSubHeader>Dashboard</MatBlazor.MatListGroupSubHeader>
+                        <MatBlazor.MatList>
+                            <MatBlazor.MatListItem>
+                                Post
+                            </MatBlazor.MatListItem>
+                            <MatBlazor.MatListItem>
+                                Pages
+                            </MatBlazor.MatListItem>
+                            <MatBlazor.MatListItem>
+                                Media
+                            </MatBlazor.MatListItem>
+                        </MatBlazor.MatList>
+                        <MatBlazor.MatListGroupSubHeader>Master Files</MatBlazor.MatListGroupSubHeader>
+                        <MatBlazor.MatList>
+                            <MatBlazor.MatListItem Href="/Employees">
+                                Employees
+                            </MatBlazor.MatListItem>
+                            <MatBlazor.MatListItem>
+                                Change Password
+                            </MatBlazor.MatListItem>
+                        </MatBlazor.MatList>
+                    </MatBlazor.MatListGroup>
+                </MatBlazor.MatDrawer>
+            </MatBlazor.MatDrawerContainer>
+        </MatBlazor.MatAppBarContainer>
+        <MatBlazor.MatDrawerContent Style="width:100vw; height:100vh;">
+            <div style="margin:1em; padding:1em;" class="container">
+                @Body
+            </div>
+        </MatBlazor.MatDrawerContent>
+    </MatBlazor.MatAppBarContent>
+</MatBlazor.MatAppBarContainer>
+    
+
+
+
+@functions
+{
+    bool Opened = false;
+
+    void ButtonClicked()
+    {
+        Opened = !Opened;
+    }
+}
+    

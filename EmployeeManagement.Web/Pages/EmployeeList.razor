@@ -1,29 +1,39 @@
-﻿@page "/"
+﻿@page "/Employees"
 @inherits EmployeeListBase
 
-<h3>Employee List</h3>
-@if(Employees==null)
+<h3>Employee Master</h3>
+<MatBlazor.MatButton Raised="true" Link="/">Add Employee</MatBlazor.MatButton>
+<hr />
+
+@if (Employees == null)
 {
     <div class="spinner">
-
     </div>
 }
 else
 {
-    <div class="card-deck">
-        @foreach(var employee in Employees)
-        {
-            <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
-                <div class="card-header">
-                    <h3>@employee.FirstName @employee.LastName</h3>
-                </div>
-                <img class="card-img-top imageThumbnail" src="@employee.PhotoPath" />
-                <div class="=" class-footer text-center">
-                    <a href="#" class="btn btn-primary m-1">View</a>
-                    <a href="#" class="btn btn-primary m-1">Edit</a>
-                    <a href="#" class="btn btn-primary m-1">Delete</a>
-                </div>
-            </div>
-        }
-</div>
+    <MatBlazor.MatTable Items="Employees" class="mat-elevation-z5" Striped="true" FilterByColumnName="Name">
+        <MatTableHeader>
+            <th>ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Action</th>
+        </MatTableHeader>
+
+        <MatTableRow>
+            <td>@context.Id</td>
+            <td>@context.FirstName</td>
+            <td>@context.LastName</td>
+            <td>
+                <MatBlazor.MatButton Raised="true" Link="/" Icon="edit"></MatBlazor.MatButton>
+                |
+                <MatBlazor.MatButton Raised="true" Link="/" Icon="restore_from_trash"></MatBlazor.MatButton>
+            </td>
+        </MatTableRow>
+    </MatBlazor.MatTable>
 }
+
+
+
+
+
