@@ -20,6 +20,7 @@ namespace EmployeeManagement.Web.Pages
            Employees =  (await EmployeeService.GetEmployees()).ToList();
         }
 
+
       
     }
 }

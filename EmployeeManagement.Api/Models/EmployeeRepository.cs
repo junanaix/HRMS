@@ -64,11 +64,6 @@ namespace EmployeeManagement.Api.Models
                 query = query.Where(e => e.FirstName.Contains(name) || e.LastName.Contains(name));
             }
 
-            if (gender != null)
-            {
-                query = query.Where(e => e.Gender == gender);
-            }
-
             return await query.ToListAsync();
         }
 
@@ -79,7 +74,7 @@ namespace EmployeeManagement.Api.Models
             if (result != null)
             {
                 result.EmployeeId = employee.EmployeeId;
-                result.BiometricID = employee.BiometricID;
+                result.BiometricId = employee.BiometricId;
                 result.Marital_Status = employee.Marital_Status;
                 result.Status = employee.Status;
                 result.FirstName = employee.FirstName;

@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@using MatBlazor
 @*<div class="sidebar">
         <NavMenu />
     </div>
@@ -12,14 +13,14 @@
 *@
 
 
-<MatBlazor.MatAppBarContainer>
-    <MatBlazor.MatAppBar Fixed="true">
-        <MatBlazor.MatAppBarRow>
-            <MatBlazor.MatAppBarSection>
-                <MatBlazor.MatIconButton Icon="menu" OnClick="@((b) => ButtonClicked())"></MatBlazor.MatIconButton>
-                    <MatBlazor.MatAppBarTitle>HRMS</MatBlazor.MatAppBarTitle>
-            </MatBlazor.MatAppBarSection>
-            <MatBlazor.MatAppBarSection Align="@MatBlazor.MatAppBarSectionAlign.End">
+<MatAppBarContainer>
+    <MatAppBar Fixed="true">
+        <MatAppBarRow>
+            <MatAppBarSection>
+                <MatIconButton Icon="menu" OnClick="@((b) => ButtonClicked())"></MatIconButton>
+                    <MatAppBarTitle>HRMS</MatAppBarTitle>
+            </MatAppBarSection>
+            <MatAppBarSection Align="@MatBlazor.MatAppBarSectionAlign.End">
                 <NavLink class="text-white nav-link" href="" Match="NavLinkMatch.All">
                     Home
                 </NavLink>
@@ -29,9 +30,9 @@
                 <NavLink class="text-white nav-link" href="" Match="NavLinkMatch.All">
                     About
                 </NavLink>
-            </MatBlazor.MatAppBarSection>
-        </MatBlazor.MatAppBarRow>
-    </MatBlazor.MatAppBar>
+            </MatAppBarSection>
+        </MatAppBarRow>
+    </MatAppBar>
     @*Navigation Drawer*@
     <MatBlazor.MatAppBarContent>
         <MatBlazor.MatAppBarContainer>
@@ -70,7 +71,7 @@
             </div>
         </MatBlazor.MatDrawerContent>
     </MatBlazor.MatAppBarContent>
-</MatBlazor.MatAppBarContainer>
+</MatAppBarContainer>
     
 
 

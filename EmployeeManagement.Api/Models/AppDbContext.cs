@@ -41,7 +41,7 @@ namespace EmployeeManagement.Api.Models
               {
                   Id = 1,
                   EmployeeId = 1,
-                  BiometricID = 1,
+                  BiometricId = 1,
                   FirstName = "Robinson",
                   LastName = "Chan",
                   SurName = "Jr",
@@ -61,7 +61,7 @@ namespace EmployeeManagement.Api.Models
               {
                   Id = 2,
                   EmployeeId = 2,
-                  BiometricID = 2,
+                  BiometricId = 2,
                   FirstName = "Nancy",
                   LastName = "Taypin",
                   SurName = "",
@@ -81,7 +81,7 @@ namespace EmployeeManagement.Api.Models
             {
                 Id = 3,
                 EmployeeId = 3,
-                BiometricID = 3,
+                BiometricId = 3,
                 FirstName = "Joseph Vincent",
                 LastName = "Limbaroc",
                 SurName = "",
@@ -102,7 +102,7 @@ namespace EmployeeManagement.Api.Models
               {
                   Id = 4,
                   EmployeeId = 4,
-                  BiometricID = 4,
+                  BiometricId = 4,
                   FirstName = "Ofelia",
                   LastName = "Bernaldez",
                   SurName = "",
@@ -122,7 +122,7 @@ namespace EmployeeManagement.Api.Models
             {
                 Id = 5,
                 EmployeeId = 5,
-                BiometricID = 5,
+                BiometricId = 5,
                 FirstName = "Carol",
                 LastName = "Genavia",
                 SurName = "",

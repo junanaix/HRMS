@@ -9,7 +9,7 @@ namespace EmployeeManagement.Models
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }
-        public int BiometricID { get; set; }
+        public int BiometricId { get; set; }
         [Required]
         [MinLength(2)]
         public string FirstName { get; set; }
@@ -26,5 +26,7 @@ namespace EmployeeManagement.Models
         public string PermanentAddress { get; set; }
         public string CurrentAddress { get; set; }
         public string PhotoPath { get; set; }
+        public Job Job { get; set; }
+
     }
 }
